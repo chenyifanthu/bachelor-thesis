@@ -1,0 +1,45 @@
+% !TeX root = ../thuthesis-example.tex
+
+% 中英文摘要和关键字
+
+\begin{abstract}
+	近年来，三维场景重建与定位是计算机视觉领域中重要的研究方向。随着自动驾驶技术与工业机器人技术的不断发展，对于场景重建精度与定位准确度的要求也不断提高。如何利用各种传感器采集到的数据，完成对场景的精确重建与定位，是非常有价值和应用前景的研究方向。
+	
+	目前这一领域中存在着许多挑战：在重建方面，使用传统方法对大场景一次性建图会产生漂移误差，同时效率较低，而采用分区域重建的方法又依赖于准确的融合技术；在定位方面，由于光照环境的变化，定位时刻的环境细节特征与地图重建时刻存在差异，在匹配上存在难度；同时，基于传统单目相机的视觉定位的视场较小，有时无法捕捉到足够多的特征进行定位。这些挑战共同限制了建图的精确性与定位的鲁棒性。
+	
+	针对以上挑战，本文提出了一种重建与定位流程：首先利用传感器数据，生成场景局部点云，然后对局部点云进行拼接融合，合成整体场景高精度点云，最后利用全景相机实现在场景中的定位。
+	
+	本文主要的研究内容包括：
+	
+	1.采用了三个平行的局部重建算法：基于视觉的SfM算法、基于激光雷达的LOAM算法与基于图像激光扫描仪的方法，完成对清华园局部场景的重建任务，为针对不同环境的重建任务在设备和算法选择上提供了参考；
+	
+	2.提出一种由粗到精的点云配准算法，对局部场景点云进行融合，生成全局高精度点云。该算法融合了传统特征提取与神经网络的方法，能够在不依赖于初始转移矩阵的情况下具有较为鲁棒的配准结果。
+	
+	3.提出一种跨模态鲁棒匹配的视觉定位算法，完成了基于先验点云场景中的定位任务。该算法通过将2D-3D匹配问题转换为2D-2D匹配问题，能够在仅使用全景相机，且不预先对场景进行任何布置的情况下实现定位。
+	
+	% 关键词用“英文逗号”分隔，输出时会自动处理为正确的分隔符
+	\thusetup{
+		keywords = {三维重建, 定位, 点云配准, 神经网络, 高精度地图},
+	}
+\end{abstract}
+
+\begin{abstract*}
+	In recent years, 3D scene reconstruction and localization is an important research direction in computer vision field. With the continuous development of autonomous driving technology and industrial robot technology, the requirements for the accuracy of reconstruction and localization are also increasing. Therefore, how to use the data collected by various sensors to accurately reconstruct the scene and locate in it, is a very valuable and promising research direction.
+	
+	At present, there are many challenges in this field. In the aspect of reconstruction, the traditional method will produce drift error and low efficiency in the reconstruction of large scene in one time, while the method of subregional reconstruction relies on accurate fusion technology. In the aspect of localization, due to the change of illumination environment, the detailed features of the location time are different from those of the map reconstruction time, so it is difficult to match them. Futhermore, the visual localization techonology based on traditional monocular camera has a small field of view, so sometimes it cannot capture enough features for localization. These challenges together limit the accuracy of mapping and the robustness of localization.
+	
+	Aiming at the above challenges, a reconstruction and location process is proposed in this thesis. Firstly, local point clouds are generated from sensor data, and then the local point clouds are spliced and fused to synthesize high-precision point clouds of the whole scene. Finally, the panoramic camera is used to realize the location in the scene.
+	
+	The main research contents of this thesis include:
+	
+	1. Three parallel local reconstruction algorithms are adopted: visual based SFM algorithm, lidar based LOAM algorithm and image-laser scanner based method, to complete the reconstruction task of the local scene of Tsinghua University, which provides a reference for the selection of equipment and algorithm for reconstruction tasks in different environments;
+	
+	2. A Coarse-to-fine point cloud registration algorithm is proposed to integrate the local point clouds and generate the global high-precision point cloud. This algorithm combines the traditional feature extraction and neural network methods, and can achieve robust registration results without relying on the initial transfer matrix.
+	
+	3. A cross-modal robust matching vision location algorithm is proposed to accomplish the location task based on a priori point cloud scene. By transforming the 2D-3D matching problem into a 2D-2D matching problem, the algorithm can realize positioning using only the panoramic camera and without any layout of the scene in advance.
+	
+	% Use comma as seperator when inputting
+	\thusetup{
+		keywords* = {3D reconstruction, localization, point cloud registration, neural network, high precision map},
+	}
+\end{abstract*}

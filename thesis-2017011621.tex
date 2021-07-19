@@ -1,0 +1,46 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = en_US
+
+\documentclass[degree=bachelor]{thuthesis}
+
+
+\input{thusetup}
+
+
+\begin{document}
+
+\maketitle
+
+\copyrightpage[file=scan/scan-copyright.pdf]
+
+\frontmatter
+\input{data/abstract}
+
+\tableofcontents
+
+
+\mainmatter
+\input{data/chapter01}
+\input{data/chapter02}
+\input{data/chapter03}
+\input{data/chapter04}
+\input{data/chapter05}
+
+
+\backmatter
+\listoffigures
+\listoftables
+
+
+\bibliography{ref/refs}
+
+\input{data/acknowledgements}
+
+\statement[file=scan/scan-statement.pdf]
+
+\appendix
+\input{data/appendix-translation}
+\record{file=scan/scan-record.pdf}
+
+\end{document}
